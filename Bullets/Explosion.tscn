@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Bullets/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://src/sound/explosion.wav" type="AudioStream" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.162791, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.755814, 0.690909 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.275168, 0.550336, 1 )
+colors = PoolColorArray( 0.941406, 0.651641, 0.0367737, 1, 0.962458, 0.900729, 0.1725, 1, 0.984191, 0.589315, 0.589315, 1, 0.492188, 0.198419, 0.00384521, 1 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 32.9848
+
+[node name="Explosion" type="CPUParticles2D"]
+amount = 200
+lifetime = 0.5
+explosiveness = 0.5
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 60.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="aoe" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aoe"]
+shape = SubResource( 3 )
+
+[node name="duration" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+attenuation = 15.0
+bus = "Sound"
+
+[connection signal="area_entered" from="aoe" to="." method="_on_aoe_area_entered"]
+[connection signal="timeout" from="duration" to="." method="_on_duration_timeout"]

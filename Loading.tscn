@@ -1,0 +1,264 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/SigmarOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/health.png" type="Texture" id=2]
+[ext_resource path="res://Loading.gd" type="Script" id=3]
+[ext_resource path="res://src/ui_bg.png" type="Texture" id=4]
+[ext_resource path="res://src/chars/SlingShotters_tower.png" type="Texture" id=5]
+[ext_resource path="res://src/chars/Molotovers_tower.png" type="Texture" id=6]
+[ext_resource path="res://src/chars/thrower_tower.png" type="Texture" id=7]
+[ext_resource path="res://src/leg/1_police_Run_000.png" type="Texture" id=8]
+[ext_resource path="res://src/jud/3_police_Run_000.png" type="Texture" id=9]
+[ext_resource path="res://src/exec/2_police_Run_000.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 3
+outline_color = Color( 0, 0, 0, 0.478431 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 3
+outline_color = Color( 0.666667, 0.0392157, 0.0392157, 0.478431 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+outline_size = 3
+outline_color = Color( 0, 0, 0, 0.694118 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 3
+outline_color = Color( 0, 0.431373, 0.117647, 0.478431 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Loading" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="LevelSelect" type="Sprite" parent="."]
+position = Vector2( 428.482, 241.216 )
+scale = Vector2( 0.446291, 0.446291 )
+texture = ExtResource( 4 )
+
+[node name="Start" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 0.168627, 0.168627, 1 )
+margin_left = 336.0
+margin_top = 416.0
+margin_right = 528.0
+margin_bottom = 465.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.811765, 0.117647, 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp_bar" type="TextureProgress" parent="."]
+margin_left = 200.0
+margin_top = 384.0
+margin_right = 664.0
+margin_bottom = 408.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 2 )
+tint_under = Color( 0.152941, 0.145098, 0.145098, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.972549, 0.8, 0.0156863, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="hp_bar"]
+wait_time = 0.1
+autostart = true
+
+[node name="brgy" type="Label" parent="."]
+margin_left = 280.449
+margin_top = 352.0
+margin_right = 581.449
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 2 )
+text = "Barangay 1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="completed" type="Label" parent="."]
+margin_left = 213.617
+margin_top = 379.281
+margin_right = 645.617
+margin_bottom = 421.281
+custom_fonts/font = SubResource( 2 )
+text = "LOADING"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gov" type="Label" parent="."]
+margin_left = 209.163
+margin_top = 30.0483
+margin_right = 641.163
+margin_bottom = 72.0483
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "GOVERNMENT AGENTS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agents" type="Sprite" parent="."]
+position = Vector2( 171.004, 129.78 )
+scale = Vector2( 0.095054, 0.095054 )
+texture = ExtResource( 9 )
+
+[node name="deets" type="Label" parent="."]
+margin_left = 214.0
+margin_top = 83.0
+margin_right = 335.0
+margin_bottom = 117.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "JUDICIALS
+HP: 400
+MS: 30
+DMG: 1 heart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agents2" type="Sprite" parent="."]
+position = Vector2( 374.129, 127.998 )
+scale = Vector2( 0.095054, 0.095054 )
+texture = ExtResource( 8 )
+
+[node name="deets2" type="Label" parent="."]
+margin_left = 417.125
+margin_top = 81.2182
+margin_right = 538.125
+margin_bottom = 174.218
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "LEGISLATIVES
+HP: 400
+MS: 80
+DMG: 2 hearts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agents3" type="Sprite" parent="."]
+position = Vector2( 602.89, 127.107 )
+scale = Vector2( 0.095054, 0.095054 )
+texture = ExtResource( 10 )
+
+[node name="deets3" type="Label" parent="."]
+margin_left = 645.886
+margin_top = 80.3273
+margin_right = 766.886
+margin_bottom = 173.327
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "EXECUTIVES
+HP: 1500
+MS: 20
+DMG: 5 hearts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tower" type="Label" parent="."]
+margin_left = 208.272
+margin_top = 200.21
+margin_right = 640.272
+margin_bottom = 242.21
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "ACTIVIST TOWERS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="thrower_tower" type="Sprite" parent="."]
+position = Vector2( 170.911, 297.474 )
+scale = Vector2( 0.899899, 0.899899 )
+texture = ExtResource( 7 )
+
+[node name="deets4" type="Label" parent="."]
+margin_left = 209.0
+margin_top = 253.162
+margin_right = 339.0
+margin_bottom = 346.162
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "STONE THROWERS
+DMG: 40
+RANGE: 200
+ATK SPD: 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlingShotters_tower" type="Sprite" parent="."]
+position = Vector2( 373.017, 301.431 )
+scale = Vector2( 0.814878, 0.814878 )
+texture = ExtResource( 5 )
+
+[node name="deets5" type="Label" parent="."]
+margin_left = 411.106
+margin_top = 251.38
+margin_right = 541.106
+margin_bottom = 344.38
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "SLING SHOOTERS
+DMG: 20
+RANGE: 400
+ATK SPD: 250"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Molotovers_tower" type="Sprite" parent="."]
+position = Vector2( 576.769, 304.501 )
+scale = Vector2( 0.763059, 0.763059 )
+texture = ExtResource( 6 )
+
+[node name="deets6" type="Label" parent="."]
+margin_left = 619.758
+margin_top = 254.398
+margin_right = 749.758
+margin_bottom = 347.398
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+text = "MOLOTOVERS
+DMG: 25 AOE
+RANGE: 200
+ATK SPD: 50"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="timeout" from="hp_bar/Timer" to="." method="_on_Timer_timeout"]

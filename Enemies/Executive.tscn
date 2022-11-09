@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/exec/2_police_Run_001.png" type="Texture" id=1]
+[ext_resource path="res://Executive.gd" type="Script" id=2]
+[ext_resource path="res://src/exec/2_police_Run_000.png" type="Texture" id=3]
+[ext_resource path="res://src/exec/2_police_Run_002.png" type="Texture" id=4]
+[ext_resource path="res://src/exec/2_police_Run_003.png" type="Texture" id=5]
+[ext_resource path="res://src/exec/2_police_Run_005.png" type="Texture" id=6]
+[ext_resource path="res://src/exec/2_police_Run_004.png" type="Texture" id=7]
+[ext_resource path="res://src/health.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="Executive" type="PathFollow2D"]
+rotate = false
+cubic_interp = false
+loop = false
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 0.0310119, 0.0281074 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource( 2 )
+
+[node name="hp_bar" type="TextureProgress" parent="."]
+margin_left = -5.66817
+margin_top = -20.1091
+margin_right = 10.3318
+margin_bottom = -17.1091
+max_value = 800.0
+value = 800.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+tint_under = Color( 0.152941, 0.145098, 0.145098, 1 )
+tint_progress = Color( 0.0823529, 0.431373, 0.113725, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

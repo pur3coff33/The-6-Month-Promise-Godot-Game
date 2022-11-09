@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/slow_off.wav-d6177aeba5b0fde5ba24a8e8d6ea04b7.sample"
+
+[deps]
+
+source_file="res://src/sound/slow_off.wav"
+dest_files=[ "res://.import/slow_off.wav-d6177aeba5b0fde5ba24a8e8d6ea04b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

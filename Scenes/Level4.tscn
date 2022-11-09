@@ -1,0 +1,586 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://src/dirt_angle_3.png" type="Texture" id=1]
+[ext_resource path="res://src/dirt1.png" type="Texture" id=2]
+[ext_resource path="res://src/dirt_angle_4.png" type="Texture" id=3]
+[ext_resource path="res://src/dirt_angle_1.png" type="Texture" id=4]
+[ext_resource path="res://src/dirt_angle_2.png" type="Texture" id=5]
+[ext_resource path="res://src/gr.png" type="Texture" id=6]
+[ext_resource path="res://src/dirt2.png" type="Texture" id=7]
+[ext_resource path="res://JudiciarySpawners.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/HeroSelection.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Towers/Platform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Level4.gd" type="Script" id=12]
+[ext_resource path="res://src/chars/TOP.png" type="Texture" id=13]
+[ext_resource path="res://src/chars/LEFT.png" type="Texture" id=14]
+[ext_resource path="res://src/chars/RIGHT.png" type="Texture" id=15]
+[ext_resource path="res://src/chars/DOWN.png" type="Texture" id=16]
+[ext_resource path="res://src/chars/tree.png" type="Texture" id=17]
+[ext_resource path="res://src/chars/house.png" type="Texture" id=18]
+[ext_resource path="res://src/chars/gov.png" type="Texture" id=19]
+
+[sub_resource type="TileSet" id=1]
+0/name = "dirt1.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "dirt_angle_1.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "dirt2.png 2"
+2/texture = ExtResource( 7 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "dirt_angle_2.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "dirt_angle_3.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "dirt_angle_4.png 5"
+5/texture = ExtResource( 3 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 240, 112, 0, 0, 0, 0, 240, 208, 0, 0, 0, 0, 464, 208, 0, 0, 0, 0, 464, 336, 0, 0, 0, 0, 560, 336, 0, 0, 0, 0, 560, 240, 0, 0, 0, 0, 624, 240 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 240, 336, 0, 0, 0, 0, 240, 304, 0, 0, 0, 0, 304, 304, 0, 0, 0, 0, 304, 272, 0, 0, 0, 0, 400, 272, 0, 0, 0, 0, 400, 368, 0, 0, 0, 0, 336, 368, 0, 0, 0, 0, 336, 432, 0, 0, 0, 0, 432, 432 )
+}
+
+[sub_resource type="TileSet" id=4]
+0/name = "DOWN.png 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "LEFT.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "RIGHT.png 2"
+2/texture = ExtResource( 15 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "TOP.png 3"
+3/texture = ExtResource( 13 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 125, 125 )
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="bg" type="ColorRect" parent="."]
+margin_top = -8.0
+margin_right = 856.0
+margin_bottom = 472.0
+color = Color( 0.682353, 0.835294, 0.505882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gr" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.0862745 )
+position = Vector2( 426, 238.5 )
+scale = Vector2( 0.334655, 0.382473 )
+texture = ExtResource( 6 )
+
+[node name="DirtTiles" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 262151, 2, 0, 327687, 2, 0, 393223, 4, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 1, 0, 458766, 2, 0, 458769, 5, 0, 458770, 0, 0, 524297, 5, 0, 524298, 0, 0, 524299, 0, 0, 524300, 1, 0, 524302, 2, 0, 524305, 2, 0, 589831, 5, 0, 589832, 0, 0, 589833, 3, 0, 589836, 2, 0, 589838, 2, 0, 589841, 2, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 3, 0, 655372, 2, 0, 655374, 4, 0, 655375, 0, 0, 655376, 0, 0, 655377, 3, 0, 720906, 5, 0, 720907, 0, 0, 720908, 3, 0, 786442, 2, 0, 851978, 4, 0, 851979, 0, 0, 851980, 0, 0 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="Judicial" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 3.0
+
+[node name="Judicial2" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 2.0
+wave = 2
+
+[node name="Judicial3" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 2.0
+wave = 3
+
+[node name="Judicial4" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 1.0
+wave = 4
+
+[node name="Judicial5" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 1.0
+wave = 5
+
+[node name="Legislative" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 5.0
+enemy_type = "Legislative"
+
+[node name="Legislative2" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 3.0
+wave = 2
+enemy_type = "Legislative"
+
+[node name="Legislative3" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 3.0
+maxTime = 3.0
+wave = 3
+enemy_type = "Legislative"
+
+[node name="Legislative4" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 3.0
+wave = 4
+enemy_type = "Legislative"
+
+[node name="Legislative5" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 2.0
+wave = 5
+enemy_type = "Legislative"
+
+[node name="Executive" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 3.0
+wave = 2
+enemy_type = "Executive"
+
+[node name="Executive2" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 2.0
+wave = 3
+enemy_type = "Executive"
+
+[node name="Executive3" parent="Path2D" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 4.0
+wave = 3
+enemy_type = "Executive"
+
+[node name="Executive4" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 3.0
+wave = 4
+enemy_type = "Executive"
+
+[node name="Executive5" parent="Path2D" instance=ExtResource( 8 )]
+maxTime = 3.0
+wave = 5
+enemy_type = "Executive"
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="Judicial" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 3.0
+
+[node name="Judicial2" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 2.0
+wave = 2
+
+[node name="Judicial3" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 2.0
+wave = 3
+
+[node name="Judicial4" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 1.0
+wave = 4
+
+[node name="Judicial5" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 1.0
+wave = 5
+
+[node name="Legislative" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 5.0
+enemy_type = "Legislative"
+
+[node name="Legislative2" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 3.0
+wave = 2
+enemy_type = "Legislative"
+
+[node name="Legislative3" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 3.0
+maxTime = 3.0
+wave = 3
+enemy_type = "Legislative"
+
+[node name="Legislative4" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 3.0
+wave = 4
+enemy_type = "Legislative"
+
+[node name="Legislative5" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 2.0
+wave = 5
+enemy_type = "Legislative"
+
+[node name="Executive" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 3.0
+wave = 2
+enemy_type = "Executive"
+
+[node name="Executive2" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 2.0
+wave = 3
+enemy_type = "Executive"
+
+[node name="Executive3" parent="Path2D2" instance=ExtResource( 8 )]
+minTime = 2.0
+maxTime = 4.0
+wave = 3
+enemy_type = "Executive"
+
+[node name="Executive4" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 3.0
+wave = 4
+enemy_type = "Executive"
+
+[node name="Executive5" parent="Path2D2" instance=ExtResource( 8 )]
+maxTime = 3.0
+wave = 5
+enemy_type = "Executive"
+
+[node name="sprite" type="Node2D" parent="."]
+
+[node name="tree" type="Sprite" parent="sprite"]
+position = Vector2( 88, 56 )
+texture = ExtResource( 17 )
+
+[node name="tree4" type="Sprite" parent="sprite"]
+position = Vector2( 64, 144 )
+texture = ExtResource( 17 )
+
+[node name="tree5" type="Sprite" parent="sprite"]
+position = Vector2( 144, 280 )
+texture = ExtResource( 17 )
+
+[node name="tree8" type="Sprite" parent="sprite"]
+position = Vector2( 640, 120 )
+texture = ExtResource( 17 )
+
+[node name="tree6" type="Sprite" parent="sprite"]
+position = Vector2( 144, 72 )
+texture = ExtResource( 17 )
+
+[node name="tree7" type="Sprite" parent="sprite"]
+position = Vector2( 240, 408 )
+texture = ExtResource( 17 )
+
+[node name="tree3" type="Sprite" parent="sprite"]
+position = Vector2( 320, 40 )
+texture = ExtResource( 17 )
+
+[node name="tree2" type="Sprite" parent="sprite"]
+position = Vector2( 152, 168 )
+texture = ExtResource( 17 )
+
+[node name="tree9" type="Sprite" parent="sprite"]
+position = Vector2( 376, 112 )
+texture = ExtResource( 17 )
+
+[node name="tree10" type="Sprite" parent="sprite"]
+position = Vector2( 472, 48 )
+texture = ExtResource( 17 )
+
+[node name="tree11" type="Sprite" parent="sprite"]
+position = Vector2( 720, 120 )
+texture = ExtResource( 17 )
+
+[node name="tree12" type="Sprite" parent="sprite"]
+position = Vector2( 800, 160 )
+texture = ExtResource( 17 )
+
+[node name="tree13" type="Sprite" parent="sprite"]
+position = Vector2( 720, 232 )
+texture = ExtResource( 17 )
+
+[node name="tree14" type="Sprite" parent="sprite"]
+position = Vector2( 800, 296 )
+texture = ExtResource( 17 )
+
+[node name="tree15" type="Sprite" parent="sprite"]
+position = Vector2( 688, 320 )
+texture = ExtResource( 17 )
+
+[node name="tree16" type="Sprite" parent="sprite"]
+position = Vector2( 512, 424 )
+texture = ExtResource( 17 )
+
+[node name="tree17" type="Sprite" parent="sprite"]
+position = Vector2( 600, 424 )
+texture = ExtResource( 17 )
+
+[node name="tree18" type="Sprite" parent="sprite"]
+position = Vector2( 744, 400 )
+texture = ExtResource( 17 )
+
+[node name="tree19" type="Sprite" parent="sprite"]
+position = Vector2( 560, 56 )
+texture = ExtResource( 17 )
+
+[node name="tree20" type="Sprite" parent="sprite"]
+position = Vector2( 536, 144 )
+texture = ExtResource( 17 )
+
+[node name="tree21" type="Sprite" parent="sprite"]
+position = Vector2( 88, 400 )
+texture = ExtResource( 17 )
+
+[node name="house" type="Sprite" parent="sprite"]
+position = Vector2( 640, 232 )
+scale = Vector2( 0.731927, 0.722856 )
+texture = ExtResource( 18 )
+
+[node name="house2" type="Sprite" parent="sprite"]
+position = Vector2( 456, 432 )
+scale = Vector2( 0.731927, 0.722856 )
+texture = ExtResource( 18 )
+
+[node name="gov" type="Sprite" parent="sprite"]
+position = Vector2( 240, 88 )
+scale = Vector2( 0.491684, 0.446319 )
+texture = ExtResource( 19 )
+
+[node name="gov2" type="Sprite" parent="sprite"]
+position = Vector2( 72, 296 )
+scale = Vector2( 0.491684, 0.446319 )
+texture = ExtResource( 19 )
+
+[node name="Platform" parent="." instance=ExtResource( 11 )]
+position = Vector2( 208, 304 )
+
+[node name="Platform2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 272, 336 )
+
+[node name="Platform3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 272, 272 )
+
+[node name="Platform4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 368, 304 )
+
+[node name="Platform5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 400, 240 )
+
+[node name="Platform6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 432, 240 )
+
+[node name="Platform7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 432, 272 )
+
+[node name="Platform8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 496, 304 )
+
+[node name="Platform20" parent="." instance=ExtResource( 11 )]
+position = Vector2( 496, 272 )
+
+[node name="Platform21" parent="." instance=ExtResource( 11 )]
+position = Vector2( 496, 240 )
+
+[node name="Platform22" parent="." instance=ExtResource( 11 )]
+position = Vector2( 528, 240 )
+
+[node name="Platform23" parent="." instance=ExtResource( 11 )]
+position = Vector2( 272, 176 )
+
+[node name="Platform24" parent="." instance=ExtResource( 11 )]
+position = Vector2( 320, 176 )
+
+[node name="Platform25" parent="." instance=ExtResource( 11 )]
+position = Vector2( 464, 176 )
+
+[node name="Platform28" parent="." instance=ExtResource( 11 )]
+position = Vector2( 336, 240 )
+
+[node name="Platform29" parent="." instance=ExtResource( 11 )]
+position = Vector2( 304, 368 )
+
+[node name="Platform30" parent="." instance=ExtResource( 11 )]
+position = Vector2( 592, 336 )
+
+[node name="Platform31" parent="." instance=ExtResource( 11 )]
+position = Vector2( 592, 368 )
+
+[node name="Platform32" parent="." instance=ExtResource( 11 )]
+position = Vector2( 560, 368 )
+
+[node name="Platform26" parent="." instance=ExtResource( 11 )]
+position = Vector2( 416, 176 )
+
+[node name="Platform27" parent="." instance=ExtResource( 11 )]
+position = Vector2( 368, 176 )
+
+[node name="Platform9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 528, 304 )
+
+[node name="Platform19" parent="." instance=ExtResource( 11 )]
+position = Vector2( 528, 272 )
+
+[node name="Platform10" parent="." instance=ExtResource( 11 )]
+position = Vector2( 432, 304 )
+
+[node name="Platform11" parent="." instance=ExtResource( 11 )]
+position = Vector2( 432, 336 )
+
+[node name="Platform12" parent="." instance=ExtResource( 11 )]
+position = Vector2( 432, 368 )
+
+[node name="Platform13" parent="." instance=ExtResource( 11 )]
+position = Vector2( 464, 368 )
+
+[node name="Platform14" parent="." instance=ExtResource( 11 )]
+position = Vector2( 368, 400 )
+
+[node name="Platform15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 368, 336 )
+
+[node name="Platform16" parent="." instance=ExtResource( 11 )]
+position = Vector2( 336, 336 )
+
+[node name="Platform17" parent="." instance=ExtResource( 11 )]
+position = Vector2( 336, 304 )
+
+[node name="Platform18" parent="." instance=ExtResource( 11 )]
+position = Vector2( 304, 336 )
+
+[node name="GameUI" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="PathArrows" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 262151, 0, 0, 327687, 0, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 0, 0, 458766, 0, 0, 458769, 2, 0, 458770, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 0, 0, 524302, 0, 0, 524305, 3, 0, 589831, 2, 0, 589832, 2, 0, 589833, 3, 0, 589836, 0, 0, 589838, 0, 0, 589841, 3, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 3, 0, 655372, 0, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 3, 0, 720906, 0, 0, 720907, 1, 0, 720908, 1, 0, 786442, 0, 0, 851978, 2, 0, 851979, 2, 0, 851980, 2, 0 )
+
+[node name="HeroSelection" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="HeroSelection"]
+position = Vector2( 428.482, 241.216 )
+scale = Vector2( 0.446291, 0.446291 )
+texture = ExtResource( 9 )
+
+[node name="lugaw" type="TouchScreenButton" parent="HeroSelection/Sprite"]
+position = Vector2( -669.966, -127.719 )
+shape = SubResource( 5 )
+
+[node name="magno" type="TouchScreenButton" parent="HeroSelection/Sprite"]
+position = Vector2( -71.7017, -134.441 )
+shape = SubResource( 5 )
+
+[node name="sinovac" type="TouchScreenButton" parent="HeroSelection/Sprite"]
+position = Vector2( 481.749, -132.201 )
+shape = SubResource( 5 )
+
+[connection signal="released" from="HeroSelection/Sprite/lugaw" to="." method="_on_lugaw_released"]
+[connection signal="released" from="HeroSelection/Sprite/magno" to="." method="_on_magno_released"]
+[connection signal="released" from="HeroSelection/Sprite/sinovac" to="." method="_on_sinovac_released"]
